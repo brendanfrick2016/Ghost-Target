@@ -42,10 +42,6 @@ for i = 1:length(test_labels)
     end
 end
 
-accuracy = count/length(test_labels);
-display(accuracy)
-
-
 classifiers = unique(y);
 confusion_matrix = cell(length(classifiers)+1,length(classifiers)+1);
 confusion_values = zeros(length(classifiers), length(classifiers));

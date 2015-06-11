@@ -1,10 +1,8 @@
 clear all
 
 %% User inputs
-train_folder = 'C:\Users\brend_000\Documents\MATLAB\Machine Learning\Ghost Target\Images\boston_train'
-test_folder = 'C:\Users\brend_000\Documents\MATLAB\Machine Learning\Ghost Target\Images\boston'
-
-
+train_folder = 'C:\Users\brend_000\Documents\MATLAB\Machine Learning\Ghost Target\Images\boston_train';
+test_folder = 'C:\Users\brend_000\Documents\MATLAB\Machine Learning\Ghost Target\Images\boston';
 %% Parse training data
 total_train = cell(31,1);
 display('Training data')
