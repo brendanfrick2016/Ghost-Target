@@ -27,9 +27,9 @@ end
 [x, pca_x,pca_coeff] = preprocess(x);
 save('pca_coeff.mat','pca_coeff')
 
-model = fitcknn(x,y,'NumNeighbors',5);
+model = fitcknn(x,y,'NumNeighbors',10);
 save('model.mat','model')
 
-pca_model = fitcknn(pca_x,y,'NumNeighbors',5);
+pca_model = fitcknn(pca_x,y,'NumNeighbors',10);
 save('pca_model.mat','pca_model')
 

@@ -24,13 +24,19 @@ for n = 1:length(total)-1
     end
 end
 
-[x,pca_x,k_means_x] = preprocess(x,length(unique(y))) 
+load('pca_coeff.mat')
+
 if strcmp(method,'naive')
     test_labels = predict(model,x);
-end
+end;
 if strcmp(method,'pca')
-    
+    for i = 1:length(x
+    size(x)
+    size(pca_coeff)
+    pca_x = pca_coeff * x;
+    test_labels = predict(model,pca_x);    
 end
+
 
 count = 0;
 for i = 1:length(test_labels)

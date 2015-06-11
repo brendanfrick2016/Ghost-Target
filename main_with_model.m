@@ -1,6 +1,6 @@
 display('Testing data')
 total_test = cell(5+1,1);
-test_folder = 'C:\Users\brend_000\Documents\MATLAB\Machine Learning\Ghost Target\Images\mallorca';
+test_folder = 'C:\Users\brend_000\Documents\MATLAB\Machine Learning\Ghost Target\Images\cambridge';
 for x = 1:5
     display(['Reading img', num2str(x)])
     img = imread([test_folder,'\img', num2str(x),'.jpg']);
@@ -22,8 +22,7 @@ for x = 1:5
     total_test{x+1,3} = imgLabel;
 end
 load('model.mat')
-load('pca_models')
-load('k_means_model')
+load('pca_model')
 
 
 [x_test, y_test, accuracy, test_labels, confusion_matrix] = validate(total_test,model,'naive');
@@ -31,6 +30,3 @@ save('Results\confusion_matrix_naive.mat','confusion_matrix');
 
 [x_test, y_test, accuracy, test_labels, pca_confusion_matrix] = validate(total_test,pca_model,'pca');
 save('Results\confusion_matrix_pca.mat','pca_confusion_matrix');
-
-[x_test, y_test, accuracy, test_labels, k_means_confusion_matrix] = validate(total_test,k_means_model,'k_means');
-save('Results\confusion_matrix_k_means.mat','k_means_confusion_matrix');

@@ -30,7 +30,7 @@ if strcmp(method,'naive')
     test_labels = predict(model,x);
 end;
 if strcmp(method,'pca')
-    pca_x = pca_coeff * x;
+    pca_x =  x * pca_coeff;
     test_labels = predict(model,pca_x);    
 end
 
