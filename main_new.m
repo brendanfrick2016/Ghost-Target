@@ -49,7 +49,7 @@ for x = 1:5
     total_test{x+1,3} = imgLabel;
 end
 
-[x_train, y_train, model,pca_model,k_means_model] = train(total_train);
+[x_train, y_train, model,pca_model] = train(total_train);
 
 [x_test, y_test, accuracy, test_labels, confusion_matrix] = validate(total_test,model,'naive');
 save('Results\confusion_matrix_naive.mat','confusion_matrix');

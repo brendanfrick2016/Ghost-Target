@@ -1,4 +1,4 @@
-function [x, y, model, pca_model, k_means_model] = train(total)
+function [x, y, model, pca_model] = train(total)
 % X = features
 % Y = label
 x = [];
@@ -24,9 +24,8 @@ for n = 1:length(total)-1
     end
 end
 
-[x, pca_x,k_means_x,pca_coeff,centroid] = preprocess(x,length(unique(y)));
+[x, pca_x,pca_coeff] = preprocess(x);
 save('pca_coeff.mat','pca_coeff')
-save('centroid.mat', 'centroid')
 
 model = fitcknn(x,y,'NumNeighbors',5);
 save('model.mat','model')
